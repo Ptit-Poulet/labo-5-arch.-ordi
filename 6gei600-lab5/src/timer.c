@@ -10,7 +10,7 @@
 
 #define CS_M1            (1u << 1)
 
-static const uint32_t tick_interval_us = 100u;
+static const uint32_t tick_interval_us = 10000u;
 
 void timer_init(void) {
     uint32_t now = TIMER_CLO;

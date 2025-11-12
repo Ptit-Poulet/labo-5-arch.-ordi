@@ -20,16 +20,10 @@
 #define TIMER_CS          (*(volatile uint32_t*)(SYS_TIMER_BASE + 0x00))
 #define CS_M1             (1u << 1)
 
-/* ====== Set durations here (in ticks) ======
-   If your timer tick is 10 ms, use:
-     10 s -> 1000, 3 s -> 300, 15 s -> 1500
-   If your tick is 1 ms, multiply by 1000 instead, etc.
-*/
-#define GREEN_TICKS   1000u   /* ~10 s */
-#define YELLOW_TICKS  300u    /* ~3 s  */
-#define RED_TICKS     15000u   /* ~15 s */
+#define GREEN_TICKS   10000u   
+#define YELLOW_TICKS  3000u    
+#define RED_TICKS     15000u   
 
-/* ====== minimal additions: enum + targets ====== */
 typedef enum { STATE_GREEN, STATE_YELLOW, STATE_RED } light_state_t;
 static light_state_t current_state = STATE_GREEN;
 
