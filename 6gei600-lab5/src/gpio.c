@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include "gpio.h"
 #include "uart.h"
-/* File to initialise all the pins, I think */
+
 #define PERIPH_BASE      0x3F000000UL
 #define GPIO_BASE       (PERIPH_BASE + 0x200000)
 
@@ -13,8 +13,10 @@
 #define GPCLR0          (*(volatile uint32_t*)(GPIO_BASE + 0x28))
 
 #define PIN_RED         17u
-#define PIN_YELLOW      27u
-#define PIN_GREEN       22u
+
+/* Ajout des pins supplémentaires pour controller les LED avec le Rasberry Pi*/
+#define PIN_YELLOW      27u 
+#define PIN_GREEN       22u 
 
 static inline void gpio_set_output(uint32_t pin) {
     volatile uint32_t* gpfsel;
@@ -42,6 +44,7 @@ void gpio_init(void) {
     gpio_set_output(PIN_RED);
     gpio_write(PIN_RED, false);
 
+    /* Initialisation des nouveaux pins */
     uart_debug_gpio_init(PIN_YELLOW);
     gpio_set_output(PIN_YELLOW);
     gpio_write(PIN_YELLOW, false);
@@ -52,6 +55,8 @@ void gpio_init(void) {
 }
 
 void gpio_set_red(bool on)   { gpio_write(PIN_RED, on); }
+
+/* Configuration de l'état des pins et écrire leur état dans la console*/
 void gpio_set_yellow(bool on)   { gpio_write(PIN_YELLOW, on); }
 void gpio_set_green(bool on)   { gpio_write(PIN_GREEN, on); }
 
