@@ -1,0 +1,8 @@
+# Ignore object files
+*.o
+
+# Ignore ELF binary files
+*.elf
+
+# Ignore image files
+*.img
