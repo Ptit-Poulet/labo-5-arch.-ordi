@@ -1,8 +1,82 @@
-# Ignore object files
+# Build artifacts
 *.o
-
-# Ignore ELF binary files
 *.elf
-
-# Ignore image files
 *.img
+*.bin
+*.map
+
+# Compiled Object files
+*.slo
+*.lo
+*.ko
+*.obj
+
+# Linker output
+*.ilk
+*.exp
+
+# Libraries
+*.lib
+*.a
+*.la
+
+# Shared objects
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Assembly listings
+*.lst
+*.s~
+
+# Dependency files
+*.d
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# QEMU logs
+qemu.log
+qemu-*.log
+
+# GDB history
+.gdb_history
+
+# Core dumps
+core
+core.*
+
+# Temporary files
+tmp/
+temp/
+*.tmp

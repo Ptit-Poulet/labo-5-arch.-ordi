@@ -36,7 +36,7 @@ void uart_init(void) {
     GPFSEL1 = ra;
 
     GPPUD = 0;
-    delay(15000);
+    delay(150);
     GPPUDCLK0 = (1 << 14) | (1 << 15);
     delay(150);
     GPPUDCLK0 = 0;
