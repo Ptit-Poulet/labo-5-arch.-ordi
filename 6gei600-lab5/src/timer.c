@@ -12,7 +12,7 @@
 
 /* Changement de la variable tick_interval_us de 10000u -> 1000u 
    Ce changement permet de définir un intervalle d'environ 1000 microsecondes 
-   (1 milliseconde) entre chaque événement du timer. */
+   (1 milliseconde) entre chaque événement du timer. (u = unsigned) */
 static const uint32_t tick_interval_us = 1000u; // Intervalle du timer en microsecondes (1ms)
 
 void timer_init(void) {

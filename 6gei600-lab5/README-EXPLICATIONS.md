@@ -1,11 +1,11 @@
 # Labo 5 - Exploration Rasberry Pi 
 
 ## Table des matières
-1. [Explications des changements](#explication)
+1. [Explications des changements](#explications)
 2. [Crédits](#credits)
 3. [Date de remise](#dateRemise)
 
-## Explications des changements <a name="explication"></a>
+## Explications des changements <a name="explications"></a>
 
 Changements faits dans l'ordre des mofifications éffectuées : 
 - gpio.c  
