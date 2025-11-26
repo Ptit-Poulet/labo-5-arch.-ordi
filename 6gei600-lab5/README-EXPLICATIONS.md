@@ -1,4 +1,4 @@
-# Labo 5 - Rasberry Pi exploration
+# Labo 5 - Exploration Rasberry Pi 
 
 ## Table des matières
 1. [Explications des changements](#explication)
@@ -6,19 +6,32 @@
 3. [Date de remise](#dateRemise)
 
 ## Explications des changements <a name="explication"></a>
-Changements faits: 
-- gpio.c
-Initialisation des pins en plus 
 
-- interrupts.c
-déroulemetn du cycle entre les trois pins
+Changements faits dans l'ordre des mofifications éffectuées : 
+- gpio.c  
+    Initialisation des pins vert et jaune pour controller les différents LED.  
+    Configuration des pins en sortie et leur état dans la console. 
 
-- timer.c
-changemtn tick pour correspondre au changemtn sfait dasn interrupts.c
 
-** add a .gitignore to remove .o .elf and .img files from being tracked. This change was made for easier execution of the program. 
+- interrupts.c  
+    Premièrement, inclusion de <stdbool.h> afin d'utilier les valeurs booléennes. Celle-ci permettront ensuite d'allumer/d'éteindre les pins.
+    Après, définition durée allumage de chaque couleur en ticks (vert = 10s, jaune = 3s et rouge = 15s).   
+    Défini les états possibles pour le feu de circulation:   
+    allumage pin vert; éteignement des autres pins  
+    allumage pin jaune; éteignement des autres pins  
+    allumage pin rouge; éteignement des autres pins    
+    Configuration de la fonction de changement d'états dans le cycle d'allumage des pins:  
+    Un switch qui permet de chagner l'état courant de chaques pins ainsi que le nombre de ticks à attendre pour l'étape suivante. Effectuer aussi cette mise à jour dans les sorties GPIO.  
+    Certains changement sont fait dans la fonction "interrupts_ini()" pour permettre d'initialiser l'état du feu au démarrage.  
+    Finalement, changement dans la fonction "irq_handler" (gestionnaire d'interruption) permet le programme de savoir quand il faut changer d'état et planifier la prochaine interruption du timer.
 
-**Expected output:**
+- timer.c  
+    Changement de la variable tick_interval_us de 10000u -> 1000u. Tous les intervalles de temps sont proportionnels à des unités de temps bien définies ( milliseconde ).  
+    Cela simplifie non seulement la compréhension du code, mais aussi les calculs associés.
+
+** Ajout d'un .gitignore pour ignorer les fichiers *.o, .elf* et *.img*. Ce changement rend l'éxecution du programme plus fluide. 
+
+**Sortie attendue :**
 ```
 [GPIO] Initializing pin 17
 [GPIO] Set pin 17 as OUTPUT
