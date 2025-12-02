@@ -30,7 +30,7 @@ C'est ici que réside la logique principale du contrôle de flux.
   - Vert : ~10 secondes
   - Jaune : ~3 secondes
   - Rouge : ~15 secondes
-- **Machine à états :** Implémentation d'une structure `switch-case` dans la fonction de gestion pour contrôler le cycle :
+- **Gestionnaire d’états:** Implémentation d'une structure `switch-case` dans la fonction de gestion pour contrôler le cycle :
   1.  Allumage de la DEL verte (autres éteintes).
   2.  Allumage de la DEL jaune (autres éteintes).
   3.  Allumage de la DEL rouge (autres éteintes).
